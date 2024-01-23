@@ -16,8 +16,11 @@ request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    const filmsData = JSON.parse(body).results;
-    const wedgeMovies = filmsData.filter(film => film.characters.includes('https://swapi-api.hbtn.io/api/people/18/'));
+    const filmsData = JSON.parse(body).results || []; // Check for the 'results' property
+    const wedgeMovies = filmsData.filter(film =>
+      film.characters.includes('https://swapi-api.hbtn.io/api/people/18/')
+    );
     console.log(wedgeMovies.length);
   }
 });
+
