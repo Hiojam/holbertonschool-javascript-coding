@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const request = require('request');
 
 // Check if the correct number of arguments is provided
@@ -16,7 +14,7 @@ request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    const filmsData = JSON.parse(body).results;
+    const filmsData = JSON.parse(body);
     const wedgeMovies = filmsData.filter(film => film.characters.includes('https://swapi-api.hbtn.io/api/people/18/'));
     console.log(wedgeMovies.length);
   }
