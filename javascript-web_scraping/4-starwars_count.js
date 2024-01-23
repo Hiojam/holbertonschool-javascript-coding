@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 const request = require('request');
 
 // Check if the correct number of arguments is provided
