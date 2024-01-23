@@ -29,8 +29,6 @@ request.get(apiUrl, (error, response, body) => {
       }
     });
 
-    const resultArray = Object.entries(completedTasksByUser).map(([userId, count]) => ({ [userId]: count }));
-    console.log(resultArray);
+    console.log(completedTasksByUser);
   }
 });
-
